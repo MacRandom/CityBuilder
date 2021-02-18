@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3ddaa0cf20ca5fc46ae2dfdbf0ebd4bc, type: 3}
+  m_Name: Mineral Vault
+  m_EditorClassIdentifier: 
+  BuildingPrefab: {fileID: 7233586694927403037, guid: 599dc036e58d04f419fa5876e189de9a,
+    type: 3}
+  PlaceholderPrefab: {fileID: 7233586694927403037, guid: dcbbce91f16de564aadad3da14e756ac,
+    type: 3}

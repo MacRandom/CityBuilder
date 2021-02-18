@@ -202,7 +202,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 140487990}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1241544472}
+        m_MethodName: BuildingStart
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 11400000, guid: 888ade71553227e4a89bb39316e915a9,
+            type: 2}
+          m_ObjectArgumentAssemblyTypeName: CityBuilder.Data.BuildingData, Assembly-CSharp
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &140487990
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -321,7 +333,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 412435359}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1241544472}
+        m_MethodName: BuildingStart
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 11400000, guid: 96b1fb58f70bdb44796a13885f61fdbd,
+            type: 2}
+          m_ObjectArgumentAssemblyTypeName: CityBuilder.Data.BuildingData, Assembly-CSharp
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &412435359
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -980,7 +1004,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 896893781}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1241544472}
+        m_MethodName: BuildingStart
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 11400000, guid: b81f99688a43e0a4eabbb4a3cff00a6f,
+            type: 2}
+          m_ObjectArgumentAssemblyTypeName: CityBuilder.Data.BuildingData, Assembly-CSharp
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &896893781
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1265,15 +1301,11 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1241544471}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1b65a6dfe64aac249a0db901111bba94, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _buildingPrefab: {fileID: 3479826307599972611, guid: 1bd4ab3a3aaab7f4d9d0f72b0a864c96,
-    type: 3}
-  _placeholderPrefab: {fileID: 3479826307599972611, guid: 4026d646b9fa78944beca72852613362,
-    type: 3}
 --- !u!4 &1241544473
 Transform:
   m_ObjectHideFlags: 0
@@ -1690,7 +1722,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1568786898}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1241544472}
+        m_MethodName: BuildingStart
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 11400000, guid: b32c9571b0cecbe44a9481a3e28a8509,
+            type: 2}
+          m_ObjectArgumentAssemblyTypeName: CityBuilder.Data.BuildingData, Assembly-CSharp
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1568786898
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1752,7 +1796,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1824312486}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 85ab450fd78d710488752f8c7eee24da, type: 3}
   m_Name: 
