@@ -1,10 +1,14 @@
 ﻿using UnityEngine;
 using CityBuilder.Data;
+using CityBuilder.Game;
 
 namespace CityBuilder.BuildingSystem
 {
     public class StructureBuilder : MonoBehaviour
     {
+        [SerializeField]
+        private ResourceManager _resourceManager;
+
         private GameObject _buildingPrefab;
         private GameObject _placeholder;
         private float _xMin = -20f;
@@ -12,6 +16,7 @@ namespace CityBuilder.BuildingSystem
         private float _zMin = -20f;
         private float _zMax = 19f;
         private BuildingPossibility _buildingPossibility;
+        private Structure _structure;
 
         public void BuildingStart(BuildingData buildingData)
         {
@@ -21,6 +26,7 @@ namespace CityBuilder.BuildingSystem
             _placeholder = Instantiate(buildingData.PlaceholderPrefab);
             _buildingPossibility = _placeholder.GetComponentInChildren<BuildingPossibility>();
             _buildingPrefab = buildingData.BuildingPrefab;
+            _structure = _buildingPrefab.GetComponent<Structure>();
         }
 
         private void FixedUpdate()
@@ -44,8 +50,9 @@ namespace CityBuilder.BuildingSystem
         {
             if (_placeholder != null && _buildingPrefab != null)
                 if (Input.GetMouseButtonDown(0))
-                    if (_buildingPossibility.IsPossible)
+                    if (_buildingPossibility.IsPossible && _resourceManager.IsEnoughResources(_structure.BuildingCostData))
                     {
+                        _resourceManager.SpentResource(_structure.BuildingCostData);
                         Instantiate(_buildingPrefab, _placeholder.transform.position, Quaternion.identity);
                         Destroy(_placeholder);
                     }

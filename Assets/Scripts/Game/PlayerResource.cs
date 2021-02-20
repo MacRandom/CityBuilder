@@ -43,8 +43,8 @@ namespace CityBuilder.Game
             }
         }
 
-        public void OnGather(object sender, int value) => Current += value;
-        public void OnSpent(object sender, int value) => Current -= value;
-        public void OnVaultBuilded(object sender, int value) => Max += value;
+        public void Gather(int value) => Current += value;
+        public void Spent(int value) => Current -= value;
+        public void VaultBuilded(int value) => Max += value;
     }
 }

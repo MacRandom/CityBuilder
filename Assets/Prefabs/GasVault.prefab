@@ -102,6 +102,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6665915963242577675}
+  - component: {fileID: 119401121550415129}
   m_Layer: 0
   m_Name: GasVault
   m_TagString: Building
@@ -124,3 +125,16 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &119401121550415129
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7493157017454690441}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8ac1e2b8c3014df43b84f12bf4d7235e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  BuildingCostData: {fileID: 11400000, guid: 0e318d187a4eb1644b55becf23bd546a, type: 2}
