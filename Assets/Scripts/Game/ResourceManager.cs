@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
-using UnityEngine;
 using CityBuilder.Data;
+using UnityEngine;
 
 namespace CityBuilder.Game
 {
@@ -35,6 +35,19 @@ namespace CityBuilder.Game
                 _resources.TryGetValue(cost.Name, out PlayerResource resource);
                 resource.Spent(cost.Value);
             }
+        }
+
+        public bool TryGatherResource(string name, int value)
+        {
+            _resources.TryGetValue(name, out PlayerResource resource);
+            int newValue = resource.Current + value;
+
+            if (newValue > resource.Max)
+                return false;
+
+            resource.Gather(value);
+
+            return true;
         }
     }
 }
