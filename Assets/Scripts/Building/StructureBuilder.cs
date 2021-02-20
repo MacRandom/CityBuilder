@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using CityBuilder.Data;
 using CityBuilder.Game;
+using UnityEngine.EventSystems;
 
 namespace CityBuilder.BuildingSystem
 {
@@ -48,14 +49,19 @@ namespace CityBuilder.BuildingSystem
 
         private void Update()
         {
-            if (_placeholder != null && _buildingPrefab != null)
-                if (Input.GetMouseButtonDown(0))
-                    if (_buildingPossibility.IsPossible && _resourceManager.IsEnoughResources(_structure.BuildingCostData))
-                    {
-                        _resourceManager.SpentResource(_structure.BuildingCostData);
-                        Instantiate(_buildingPrefab, _placeholder.transform.position, Quaternion.identity);
-                        Destroy(_placeholder);
-                    }
+            if (EventSystem.current.IsPointerOverGameObject())
+                return;
+
+            if (_placeholder == null || _buildingPrefab == null)
+                return;
+
+            if (Input.GetMouseButtonDown(0))
+                if (_buildingPossibility.IsPossible && _resourceManager.IsEnoughResources(_structure.BuildingCostData))
+                {
+                    _resourceManager.SpentResource(_structure.BuildingCostData);
+                    Instantiate(_buildingPrefab, _placeholder.transform.position, Quaternion.identity);
+                    Destroy(_placeholder);
+                }
         }
     }
 }
