@@ -1,4 +1,5 @@
 ﻿using System;
+using CityBuilder.BuildingSystem;
 using CityBuilder.Data;
 using Cysharp.Threading.Tasks;
 using UnityEngine;
@@ -11,6 +12,7 @@ namespace CityBuilder.Game
         private MineData _mineData;
         [SerializeField]
         private MineUI _mineUI;
+        private BuildStructure _buildStructure;
         private ResourceManager _resourceManager;
         private bool _isGathered;
 
@@ -30,7 +32,8 @@ namespace CityBuilder.Game
         private void Awake()
         {
             _resourceManager = FindObjectOfType<ResourceManager>();
-            StartGather();
+            _buildStructure = GetComponent<BuildStructure>();
+            _buildStructure.Builded += OnBuilded;
         }
 
         private void OnEnable()
@@ -41,6 +44,12 @@ namespace CityBuilder.Game
         private void OnDisable()
         {
             _mineUI.Clicked -= OnMineClick;
+        }
+
+        private void OnBuilded(object sender, EventArgs e)
+        {
+            StartGather();
+            _buildStructure.Builded -= OnBuilded;
         }
 
         public async void StartGather()

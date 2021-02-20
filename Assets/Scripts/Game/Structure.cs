@@ -1,12 +1,11 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using CityBuilder.Data;
 using UnityEngine;
-using CityBuilder.Data;
 
 namespace CityBuilder.Game
 {
     public class Structure : MonoBehaviour
     {
         public BuildingCostData BuildingCostData;
+        public int BuildingTime;
     }
 }

@@ -127,6 +127,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   BuildingCostData: {fileID: 11400000, guid: ce424d67fc096dc4e8c87a8ee6f066af, type: 2}
+  BuildingTime: 60
 --- !u!114 &-220738384336462219
 MonoBehaviour:
   m_ObjectHideFlags: 0
