@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using CityBuilder.Data;
 using UnityEngine;
 
@@ -26,6 +27,13 @@ namespace CityBuilder.Game
             }
 
             return true;
+        }
+
+        public void VaultBuilded(string name, int capacity)
+        {
+            _resources.TryGetValue(name, out PlayerResource resource);
+
+            resource.VaultBuilded(capacity);
         }
 
         public void SpentResource(BuildingCostData buildingCost)

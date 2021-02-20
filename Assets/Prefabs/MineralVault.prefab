@@ -103,6 +103,8 @@ GameObject:
   m_Component:
   - component: {fileID: 4911060187471109164}
   - component: {fileID: 2118832097804497869}
+  - component: {fileID: -5074164791056992973}
+  - component: {fileID: -4404303109554264780}
   m_Layer: 0
   m_Name: MineralVault
   m_TagString: Building
@@ -139,3 +141,28 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   BuildingCostData: {fileID: 11400000, guid: 07e3eebfe0b8d3b4c9bdcad50e3c144a, type: 2}
   BuildingTime: 120
+--- !u!114 &-5074164791056992973
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7233586694927403037}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 749f778f345cbed468952cab069cb713, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &-4404303109554264780
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7233586694927403037}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a28cae0cdef999c48be428151ae838ac, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _vaultData: {fileID: 11400000, guid: f4bb99a7780d6904593142773c2d1721, type: 2}
