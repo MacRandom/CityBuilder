@@ -18,7 +18,7 @@ namespace CityBuilder.CameraSystem
 
         private void Update()
         {
-            if (Input.GetMouseButton(1))
+            if (Input.GetMouseButton(0))
             {
                 var translateVector = new Vector3(-Input.GetAxis("Mouse X"), 0, -Input.GetAxis("Mouse Y")) * Time.deltaTime * _speed;
                 transform.Translate(translateVector, Space.Self);
