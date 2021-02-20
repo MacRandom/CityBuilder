@@ -11,6 +11,7 @@ namespace CityBuilder.BuildingSystem
         private ResourceManager _resourceManager;
 
         private GameObject _buildingPrefab;
+        private BuildStructure _buildStructure;
         private GameObject _placeholder;
         private float _xMin = -20f;
         private float _xMax = 19f;
@@ -18,6 +19,7 @@ namespace CityBuilder.BuildingSystem
         private float _zMax = 19f;
         private BuildingPossibility _buildingPossibility;
         private Structure _structure;
+        private bool _isCurrentlyBuilding = false;
 
         public void BuildingStart(BuildingData buildingData)
         {
@@ -49,7 +51,13 @@ namespace CityBuilder.BuildingSystem
 
         private void Update()
         {
+            if (Input.GetMouseButtonDown(1) || Input.GetButtonDown("Cancel"))
+                Destroy(_placeholder);
+
             if (EventSystem.current.IsPointerOverGameObject())
+                return;
+
+            if (_isCurrentlyBuilding)
                 return;
 
             if (_placeholder == null || _buildingPrefab == null)
@@ -58,10 +66,22 @@ namespace CityBuilder.BuildingSystem
             if (Input.GetMouseButtonDown(0))
                 if (_buildingPossibility.IsPossible && _resourceManager.IsEnoughResources(_structure.BuildingCostData))
                 {
+                    _isCurrentlyBuilding = true;
+
                     _resourceManager.SpentResource(_structure.BuildingCostData);
-                    Instantiate(_buildingPrefab, _placeholder.transform.position, Quaternion.identity);
+                    var structure = Instantiate(_buildingPrefab, _placeholder.transform.position, Quaternion.identity);
+
+                    _buildStructure = structure.GetComponent<BuildStructure>();
+                    _buildStructure.Builded += OnBuilded;
+
                     Destroy(_placeholder);
                 }
+        }
+
+        private void OnBuilded(object sender, System.EventArgs e)
+        {
+            _isCurrentlyBuilding = false;
+            _buildStructure.Builded -= OnBuilded;
         }
     }
 }
