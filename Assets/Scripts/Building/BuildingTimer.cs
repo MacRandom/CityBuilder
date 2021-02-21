@@ -5,7 +5,7 @@ using UnityEngine;
 
 namespace CityBuilder.BuildingSystem
 {
-    public class BuildStructure : MonoBehaviour
+    public class BuildingTimer : MonoBehaviour
     {
         public event EventHandler Builded;
 

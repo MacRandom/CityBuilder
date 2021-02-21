@@ -5,13 +5,13 @@ using UnityEngine.EventSystems;
 
 namespace CityBuilder.BuildingSystem
 {
-    public class StructureBuilder : MonoBehaviour
+    public class BuildingSystem : MonoBehaviour
     {
         [SerializeField]
         private ResourceManager _resourceManager;
 
         private GameObject _buildingPrefab;
-        private BuildStructure _buildStructure;
+        private BuildingTimer _buildingTimer;
         private GameObject _placeholder;
         private float _xMin = -20f;
         private float _xMax = 19f;
@@ -71,8 +71,8 @@ namespace CityBuilder.BuildingSystem
                     _resourceManager.SpentResource(_structure.BuildingCostData);
                     var structure = Instantiate(_buildingPrefab, _placeholder.transform.position, Quaternion.identity);
 
-                    _buildStructure = structure.GetComponent<BuildStructure>();
-                    _buildStructure.Builded += OnBuilded;
+                    _buildingTimer = structure.GetComponent<BuildingTimer>();
+                    _buildingTimer.Builded += OnBuilded;
 
                     Destroy(_placeholder);
                 }
@@ -81,7 +81,7 @@ namespace CityBuilder.BuildingSystem
         private void OnBuilded(object sender, System.EventArgs e)
         {
             _isCurrentlyBuilding = false;
-            _buildStructure.Builded -= OnBuilded;
+            _buildingTimer.Builded -= OnBuilded;
         }
     }
 }

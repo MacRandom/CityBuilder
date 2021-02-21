@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using CityBuilder.BuildingSystem;
+﻿using CityBuilder.BuildingSystem;
 using CityBuilder.Data;
 using UnityEngine;
 
@@ -10,14 +8,14 @@ namespace CityBuilder.Game
     {
         [SerializeField]
         private VaultData _vaultData;
-        private BuildStructure _buildStructure;
+        private BuildingTimer _buildingTimer;
         private ResourceManager _resourceManager;
 
         private void Awake()
         {
             _resourceManager = FindObjectOfType<ResourceManager>();
-            _buildStructure = GetComponent<BuildStructure>();
-            _buildStructure.Builded += OnBuilded;
+            _buildingTimer = GetComponent<BuildingTimer>();
+            _buildingTimer.Builded += OnBuilded;
         }
 
         private void OnBuilded(object sender, System.EventArgs e)

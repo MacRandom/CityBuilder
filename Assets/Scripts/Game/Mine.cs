@@ -12,7 +12,7 @@ namespace CityBuilder.Game
         private MineData _mineData;
         [SerializeField]
         private MineUI _mineUI;
-        private BuildStructure _buildStructure;
+        private BuildingTimer _buildingTimer;
         private ResourceManager _resourceManager;
         private bool _isGathered;
 
@@ -32,8 +32,8 @@ namespace CityBuilder.Game
         private void Awake()
         {
             _resourceManager = FindObjectOfType<ResourceManager>();
-            _buildStructure = GetComponent<BuildStructure>();
-            _buildStructure.Builded += OnBuilded;
+            _buildingTimer = GetComponent<BuildingTimer>();
+            _buildingTimer.Builded += OnBuilded;
         }
 
         private void OnEnable()
@@ -49,7 +49,7 @@ namespace CityBuilder.Game
         private void OnBuilded(object sender, EventArgs e)
         {
             StartGather();
-            _buildStructure.Builded -= OnBuilded;
+            _buildingTimer.Builded -= OnBuilded;
         }
 
         public async void StartGather()

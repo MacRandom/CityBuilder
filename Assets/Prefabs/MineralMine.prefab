@@ -91,7 +91,7 @@ GameObject:
   - component: {fileID: 1982149889964954150}
   - component: {fileID: -220738384336462219}
   - component: {fileID: 6772501565886882140}
-  - component: {fileID: -7835439263371858728}
+  - component: {fileID: 7107671976602997020}
   m_Layer: 0
   m_Name: MineralMine
   m_TagString: Building
@@ -156,7 +156,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _mineUI: {fileID: 5873365220709958270}
---- !u!114 &-7835439263371858728
+--- !u!114 &7107671976602997020
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -165,7 +165,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 3527597508103062560}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 749f778f345cbed468952cab069cb713, type: 3}
+  m_Script: {fileID: 11500000, guid: 0e39f0c661718c940a8d97fbae17961c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &3527597508634749967

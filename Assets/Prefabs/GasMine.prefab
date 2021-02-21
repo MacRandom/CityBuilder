@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 2060834141686127742}
   - component: {fileID: -4889548241795646204}
   - component: {fileID: 5488194928097806090}
-  - component: {fileID: 897085436799192912}
+  - component: {fileID: 1612614334515096032}
   m_Layer: 0
   m_Name: GasMine
   m_TagString: Building
@@ -77,7 +77,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _mineUI: {fileID: 7431748499436269250}
---- !u!114 &897085436799192912
+--- !u!114 &1612614334515096032
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -86,7 +86,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 3479826307599972611}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 749f778f345cbed468952cab069cb713, type: 3}
+  m_Script: {fileID: 11500000, guid: 0e39f0c661718c940a8d97fbae17961c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &7014091111184491964
