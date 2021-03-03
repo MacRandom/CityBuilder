@@ -20,6 +20,12 @@ namespace CityBuilder.BuildingSystem
         private BuildingPossibility _buildingPossibility;
         private Structure _structure;
         private bool _isCurrentlyBuilding = false;
+        private Camera _mainCamera;
+
+        private void Awake()
+        {
+            _mainCamera = Camera.main;
+        }
 
         public void BuildingStart(BuildingData buildingData)
         {
@@ -36,7 +42,7 @@ namespace CityBuilder.BuildingSystem
         {
             if (_placeholder != null)
             {
-                var ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+                var ray = _mainCamera.ScreenPointToRay(Input.mousePosition);
 
                 if (Physics.Raycast(ray, out RaycastHit hit))
                     if (hit.transform.CompareTag("Ground"))

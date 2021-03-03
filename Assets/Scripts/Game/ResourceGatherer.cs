@@ -3,15 +3,21 @@ using UnityEngine.EventSystems;
 
 public class ResourceGatherer : MonoBehaviour
 {
-    // Update is called once per frame
-    void Update()
+    private Camera _mainCamera;
+
+    private void Awake()
+    {
+        _mainCamera = Camera.main;
+    }
+
+    private void Update()
     {
         if (EventSystem.current.IsPointerOverGameObject())
             return;
 
         if (Input.GetMouseButtonDown(0))
         {
-            var ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+            var ray = _mainCamera.ScreenPointToRay(Input.mousePosition);
 
             if (Physics.Raycast(ray, out RaycastHit hit))
                 if (hit.transform.CompareTag("Building"))
